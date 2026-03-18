@@ -46,6 +46,10 @@ const streamResponse = async (res, text) => {
   res.end();
 };
 
+app.get("/", (req, res) => {
+  res.send("🚀 Moon75 AI Agent API running...");
+});
+
 /* =========================
    🔹 Chat API
 ========================= */
