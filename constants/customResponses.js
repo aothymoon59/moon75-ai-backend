@@ -1,4 +1,4 @@
-const customResponses = [
+export const customResponses = [
   {
     keywords: ["who made you", "who created you", "who is your creator"],
     answer:
@@ -21,4 +21,3 @@ const customResponses = [
     answer: "You're welcome 😊",
   },
 ];
-module.exports = { customResponses };
