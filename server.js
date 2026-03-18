@@ -15,8 +15,16 @@ app.use(express.json());
 // =======================
 import chatModule from "./modules/chat/index.js";
 import { customQnARoutes } from "./modules/customQnA/index.js";
+import { adminAuth } from "./middlewares/adminAuth.js";
 app.use("/api/chat", chatModule.routes);
-app.use("/api/admin/qna", customQnARoutes);
+app.post("/api/admin/verify", (req, res) => {
+  const { secretCode } = req.body;
+  if (secretCode === process.env.ADMIN_SECRET_CODE) {
+    return res.json({ success: true });
+  }
+  return res.status(401).json({ error: "Invalid secret code" });
+});
+app.use("/api/admin/qna", adminAuth, customQnARoutes);
 
 // Health Check
 app.get("/", (req, res) => res.send("🚀 Moon75 AI Agent API running..."));
