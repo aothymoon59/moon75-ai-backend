@@ -1,5 +1,5 @@
-import { customResponses } from "../../constants/customResponses.js";
 import { findCustomResponse, streamResponse } from "./customQnAService.js";
+import customQnARoutes from "./customQnARoutes.js";
 
-export { customResponses };
 export const customQnAService = { findCustomResponse, streamResponse };
+export { customQnARoutes };

@@ -15,7 +15,7 @@ const handleChat = async (req, res) => {
   res.flushHeaders();
 
   // Check custom responses first
-  const matched = customQnAService.findCustomResponse(message);
+  const matched = await customQnAService.findCustomResponse(message);
   if (matched) return customQnAService.streamResponse(res, matched.answer);
 
   // Call OpenRouter AI

@@ -14,7 +14,9 @@ app.use(express.json());
 // 🔹 Load Modules
 // =======================
 import chatModule from "./modules/chat/index.js";
+import { customQnARoutes } from "./modules/customQnA/index.js";
 app.use("/api/chat", chatModule.routes);
+app.use("/api/admin/qna", customQnARoutes);
 
 // Health Check
 app.get("/", (req, res) => res.send("🚀 Moon75 AI Agent API running..."));
