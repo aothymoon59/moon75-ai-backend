@@ -1,7 +1,4 @@
-/* =========================
-   🔹 Custom Q&A List
-========================= */
-export const customResponses = [
+const customResponses = [
   {
     keywords: ["who made you", "who created you", "who is your creator"],
     answer:
@@ -24,3 +21,4 @@ export const customResponses = [
     answer: "You're welcome 😊",
   },
 ];
+module.exports = { customResponses };

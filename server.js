@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const OpenAI = require("openai");
-const { customResponses } = require("./constants/custom-response");
+const { customResponses } = require("./constants");
 require("dotenv").config();
 
 const app = express();
